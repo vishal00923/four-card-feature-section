@@ -5,12 +5,131 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-html {
   box-sizing: border-box;
 }
 
-body {
+html {
   font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: hsl(234, 12%, 34%);
+  background-color: hsl(0, 0%, 98%);
+}
+
+#header {
+  margin: 64px auto;
+  padding: 0 32px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+.header-subtitle {
+  font-size: 35px;
+}
+
+.header-description {
+  color: hsl(229, 6%, 66%);
+  margin-top: 20px;
+}
+
+.cards {
+  margin: 80px 8% 0;
+  display: grid;
+  column-gap: 32px;
+}
+
+.card {
+  height: 180px;
+  padding: 32px;
+  border-radius: 8px;
+  margin-bottom: 48px;
+  box-shadow: 0 12px 8px 4px hsl(220, 6%, 91%);
+  position: relative;
+}
+
+.card1 {
+  border-top: 8px solid hsl(180, 62%, 55%);
+}
+
+.card2 {
+  border-top: 8px solid hsl(0, 78%, 62%);
+}
+
+.card3 {
+  border-top: 8px solid hsl(34, 97%, 64%);
+}
+
+.card4 {
+  border-top: 8px solid hsl(212, 86%, 64%);
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 14px;
+  font-weight: lighter;
+  color: hsl(229, 6%, 66%);
+}
+
+.card-img {
+  padding: 32px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* ========================== Media Queries ================= */
+
+@media screen and (max-width: 550px) {
+  .header-title,
+  .header-subtitle {
+    font-size: 25px;
+  }
+
+  .card {
+    height: 232px;
+  }
+}
+
+@media (min-width: 680px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1250px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      'start mid1 end'
+      'start mid2 end';
+  }
+
+  .card1 {
+    grid-area: start;
+    align-self: center;
+  }
+
+  .card2 {
+    grid-area: mid1;
+  }
+
+  .card3 {
+    grid-area: mid2;
+  }
+
+  .card4 {
+    grid-area: end;
+    align-self: center;
+  }
 }
